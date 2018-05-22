@@ -1,5 +1,6 @@
 package com.xyoye.xyoyecollect;
 
+import android.Manifest;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 import com.xyoye.xyoyecollect.carshcollect.CrashActivity;
 import com.xyoye.xyoyecollect.changetheme.ChangeThemeActivity;
 import com.xyoye.xyoyecollect.guideview.GuideActivity;
+import com.xyoye.xyoyecollect.permissionchecker.PermissionHelper;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -54,7 +56,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 launchActivity(GuideActivity.class);
                 break;
             case R.id.crash:
-                launchActivity(CrashActivity.class);
+                new PermissionHelper().with(MainActivity.this).request(new PermissionHelper.OnSuccessListener() {
+                    @Override
+                    public void onPermissionSuccess() {
+                        launchActivity(CrashActivity.class);
+                    }
+                }, Manifest.permission.WRITE_EXTERNAL_STORAGE);
                 break;
         }
     }
