@@ -8,6 +8,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.xyoye.xyoyecollect.carshcollect.CrashActivity;
 import com.xyoye.xyoyecollect.changetheme.ChangeThemeActivity;
 import com.xyoye.xyoyecollect.guideview.GuideActivity;
 
@@ -22,6 +23,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button changeThemeModule;
     @BindView(R.id.guide_view)
     Button guideView;
+    @BindView(R.id.crash)
+    Button crash;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void initListener(){
         changeThemeModule.setOnClickListener(this);
         guideView.setOnClickListener(this);
+        crash.setOnClickListener(this);
     }
 
     @Override
@@ -48,6 +52,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.guide_view:
                 launchActivity(GuideActivity.class);
+                break;
+            case R.id.crash:
+                launchActivity(CrashActivity.class);
                 break;
         }
     }

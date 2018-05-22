@@ -27,6 +27,13 @@
             android:layout_marginTop="10dp"
             android:text="引导层"/>
 
+        <Button
+            android:id="@+id/crash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="错误收集"/>
+
     </LinearLayout>
 
 
