@@ -20,6 +20,13 @@
             android:layout_height="wrap_content"
             android:text="主题切换"/>
 
+        <Button
+            android:id="@+id/guide_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="引导层"/>
+
     </LinearLayout>
 
 

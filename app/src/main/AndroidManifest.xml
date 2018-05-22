@@ -19,6 +19,9 @@
 
         <activity android:name=".changetheme.ChangeThemeActivity">
         </activity>
+
+        <activity android:name=".guideview.GuideActivity">
+        </activity>
     </application>
 
 </manifest>

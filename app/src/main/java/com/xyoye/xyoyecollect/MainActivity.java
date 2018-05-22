@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.xyoye.xyoyecollect.changetheme.ChangeThemeActivity;
+import com.xyoye.xyoyecollect.guideview.GuideActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -19,6 +20,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @BindView(R.id.change_theme_module)
     Button changeThemeModule;
+    @BindView(R.id.guide_view)
+    Button guideView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,15 +37,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void initListener(){
         changeThemeModule.setOnClickListener(this);
+        guideView.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.change_theme_module:
-                Intent changeThemeIntent = new Intent(MainActivity.this, ChangeThemeActivity.class);
-                startActivity(changeThemeIntent);
+                launchActivity(ChangeThemeActivity.class);
+                break;
+            case R.id.guide_view:
+                launchActivity(GuideActivity.class);
                 break;
         }
+    }
+
+    private void launchActivity(Class clas){
+        Intent intent = new Intent(MainActivity.this, clas);
+        startActivity(intent);
     }
 }
