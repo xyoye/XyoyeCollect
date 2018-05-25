@@ -28,6 +28,8 @@
         </activity>
 
         <activity android:name=".carshcollect.CrashActivity"/>
+
+        <activity android:name=".tablayout.TabLayoutActivity"/>
     </application>
 
 </manifest>

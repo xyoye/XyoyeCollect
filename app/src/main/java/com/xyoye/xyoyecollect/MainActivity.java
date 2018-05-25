@@ -13,6 +13,7 @@ import com.xyoye.xyoyecollect.carshcollect.CrashActivity;
 import com.xyoye.xyoyecollect.changetheme.ChangeThemeActivity;
 import com.xyoye.xyoyecollect.guideview.GuideActivity;
 import com.xyoye.xyoyecollect.permissionchecker.PermissionHelper;
+import com.xyoye.xyoyecollect.tablayout.TabLayoutActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -27,6 +28,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button guideView;
     @BindView(R.id.crash)
     Button crash;
+    @BindView(R.id.tab_layout)
+    Button tabLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +47,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         changeThemeModule.setOnClickListener(this);
         guideView.setOnClickListener(this);
         crash.setOnClickListener(this);
+        tabLayout.setOnClickListener(this);
     }
 
     @Override
@@ -62,6 +66,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         launchActivity(CrashActivity.class);
                     }
                 }, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+                break;
+            case R.id.tab_layout:
+                launchActivity(TabLayoutActivity.class);
                 break;
         }
     }
