@@ -14,3 +14,5 @@ XyoyeCollect
 - 4、权限检查
 
 - 5、TabLayout下划线最佳自定义
+
+- 6、libjpeg图片压缩
