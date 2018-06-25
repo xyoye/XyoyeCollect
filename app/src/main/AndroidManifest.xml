@@ -21,15 +21,15 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".changetheme.ChangeThemeActivity">
-        </activity>
+        <activity android:name=".changetheme.ChangeThemeActivity"/>
 
-        <activity android:name=".guideview.GuideActivity">
-        </activity>
+        <activity android:name=".guideview.GuideActivity" />
 
         <activity android:name=".carshcollect.CrashActivity"/>
 
         <activity android:name=".tablayout.TabLayoutActivity"/>
+
+        <activity android:name=".libjpegdemo.LibjpegActivity"/>
     </application>
 
 </manifest>

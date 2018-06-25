@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.xyoye.xyoyecollect.carshcollect.CrashActivity;
 import com.xyoye.xyoyecollect.changetheme.ChangeThemeActivity;
 import com.xyoye.xyoyecollect.guideview.GuideActivity;
+import com.xyoye.xyoyecollect.libjpegdemo.LibjpegActivity;
 import com.xyoye.xyoyecollect.permissionchecker.PermissionHelper;
 import com.xyoye.xyoyecollect.tablayout.TabLayoutActivity;
 
@@ -30,6 +31,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button crash;
     @BindView(R.id.tab_layout)
     Button tabLayout;
+    @BindView(R.id.libjpeg)
+    Button libjpeg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +40,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+
+        new PermissionHelper().with(MainActivity.this).request(new PermissionHelper.OnSuccessListener() {
+            @Override
+            public void onPermissionSuccess() {
+            }
+        }, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE);
 
         toolbarTitle.setText("XyoyeCollect");
 
@@ -48,6 +57,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         guideView.setOnClickListener(this);
         crash.setOnClickListener(this);
         tabLayout.setOnClickListener(this);
+        libjpeg.setOnClickListener(this);
     }
 
     @Override
@@ -69,6 +79,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.tab_layout:
                 launchActivity(TabLayoutActivity.class);
+                break;
+            case R.id.libjpeg:
+                launchActivity(LibjpegActivity.class);
                 break;
         }
     }
